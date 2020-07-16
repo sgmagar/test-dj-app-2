@@ -198,3 +198,7 @@ EMAIL_USE_TLS = True
 if DEBUG:
     # output email to console instead of sending
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    
+SWAGGER_SETTINGS = {
+   'DEFAULT_INFO': 'test_dj_app_2.urls.api_info',
+}
