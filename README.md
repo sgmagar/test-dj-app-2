@@ -79,3 +79,5 @@ This project is set up to run using [Docker Compose](https://docs.docker.com/com
 2. Run `python manage.py makemigrations`
 3. Run `python manage.py migrate`
 4. Run `python manage.py runserver`
+
+
