@@ -36,13 +36,14 @@ admin.site.site_header = "test dj app"
 admin.site.site_title = "test dj app Admin Portal"
 admin.site.index_title = "test dj app Admin"
 
+api_info = openapi.Info(
+    title="test dj app API",
+    default_version="v1",
+    description="API documentation for test dj app App",
+)
+
 # swagger
 schema_view = get_schema_view(
-    openapi.Info(
-        title="test dj app API",
-        default_version="v1",
-        description="API documentation for test dj app App",
-    ),
     public=True,
     permission_classes=(permissions.IsAuthenticated,),
 )
