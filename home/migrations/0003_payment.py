@@ -6,19 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0002_load_initial_data'),
+        ("home", "0002_load_initial_data"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Payment',
+            name="Payment",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('paypal_email', models.EmailField(max_length=50)),
-                ('paypal_id', models.CharField(max_length=200)),
-                ('paypal_password', models.CharField(max_length=200)),
-                ('paypal_currency', models.CharField(max_length=20)),
-                ('paypal_receiver_email', models.EmailField(max_length=50)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("paypal_email", models.EmailField(max_length=50)),
+                ("paypal_id", models.CharField(max_length=200)),
+                ("paypal_password", models.CharField(max_length=200)),
+                ("paypal_currency", models.CharField(max_length=20)),
+                ("paypal_receiver_email", models.EmailField(max_length=50)),
             ],
         ),
     ]
