@@ -31,3 +31,12 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
+
+
+class Payment(models.Model):
+    "Generated Model"
+    paypal_email = models.EmailField(max_length=50,)
+    paypal_id = models.CharField(max_length=200,)
+    paypal_password = models.CharField(max_length=200,)
+    paypal_currency = models.CharField(max_length=20,)
+    paypal_receiver_email = models.EmailField(max_length=50,)
