@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework import permissions
 from rest_framework import authentication
 from .serializers import CustomTextSerializer, HomePageSerializer
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
@@ -44,6 +45,11 @@ class CustomTextViewSet(ModelViewSet):
     authentication_classes = (SessionAuthentication, TokenAuthentication)
     permission_classes = [IsAdminUser]
     http_method_names = ["get", "put", "patch"]
+    
+    def get_permissions(self):
+        if self.request.method in permissions.SAFE_METHODS:
+            return [permissions.AllowAny()]
+        return super().get_permissions()
 
 
 class HomePageViewSet(ModelViewSet):
